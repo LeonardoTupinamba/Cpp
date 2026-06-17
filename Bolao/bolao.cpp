@@ -1,21 +1,31 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <clocale>
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 using namespace std;
 
 int calcularPontos(int p1, int p2, int resultado1, int resultado2) {
     if (p1 == resultado1 && p2 == resultado2)
-        return 4;
+        return 10;
     else if ((p1 > p2 && resultado1 > resultado2) ||
              (p1 < p2 && resultado1 < resultado2))
-        return 3;
+        return 5;
     else if (p1 == p2 && resultado1 == resultado2)
-        return 2;
+        return 5;
     else
         return 0;
 }
 
 int main() {
+    #ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    setlocale(LC_ALL, ".UTF8");
+    #endif
 
     string apostador1, apostador2, apostador3;
 
