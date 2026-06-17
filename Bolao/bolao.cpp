@@ -5,12 +5,12 @@ using namespace std;
 
 int calcularPontos(int p1, int p2, int resultado1, int resultado2) {
     if (p1 == resultado1 && p2 == resultado2)
-        return 4;
+        return 10;
     else if ((p1 > p2 && resultado1 > resultado2) ||
              (p1 < p2 && resultado1 < resultado2))
-        return 3;
+        return 5;
     else if (p1 == p2 && resultado1 == resultado2)
-        return 2;
+        return 5;
     else
         return 0;
 }
